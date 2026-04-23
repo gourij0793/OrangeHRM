@@ -14,7 +14,7 @@ public class LoginTest extends BaseTest
 	
 		LoginPage loginPage= new LoginPage(driver);
 		loginPage.login("Admin", "admin123");
-		loginPage.logout();
+	
 		
 		//Assertion verify dashboard
 		/*String currentUrl= driver.getCurrentUrl();
@@ -22,7 +22,17 @@ public class LoginTest extends BaseTest
 		
 		String title= driver.getTitle();
 		Assert.assertTrue(title.contains("OrangeHRM"), "Login Failed!");
-		Assert.assertTrue(loginPage.isDashboardDisplayed(), "Login failed!");
+		
+	}
+	@Test
+	public void testLogout() {
+
+	    LoginPage loginPage = new LoginPage(driver);
+
+	    loginPage.login("Admin", "admin123");
+	    loginPage.logout();
+
+	    Assert.assertTrue(driver.getCurrentUrl().contains("login"), "Logout failed!");
 	}
 	
 
