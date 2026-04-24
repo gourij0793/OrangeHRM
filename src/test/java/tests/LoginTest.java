@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
+import pages.DashboardPage;
 import pages.LoginPage;
 
 public class LoginTest extends BaseTest
@@ -22,6 +23,10 @@ public class LoginTest extends BaseTest
 		
 		String title= driver.getTitle();
 		Assert.assertTrue(title.contains("OrangeHRM"), "Login Failed!");
+		DashboardPage dashboard = new DashboardPage(driver);
+
+	    Assert.assertTrue(dashboard.isDashboardDisplayed(), "Dashboard not visible!");
+		
 		
 	}
 	@Test

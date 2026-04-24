@@ -11,7 +11,6 @@ public class LoginPage
 	By username= By.name("username");
 	By password= By.name("password");
 	By loginBtn= By.xpath("//button[@type='submit']");
-	By dashboardText= By.xpath("//h6[text()='Dashboard']");
 	By profileMenu =By.xpath("//p[@class='oxd-userdropdown-name']");
 	By logoutBtn =By.xpath("//a[text()='Logout']");
 	//constructor
@@ -36,11 +35,7 @@ public class LoginPage
 		driver.findElement(loginBtn).click();
 	}
 	
-	public boolean isDashboardDisplayed() 
-	{
-		return driver.findElement(dashboardText).isDisplayed();
-		
-	}
+	
 	public void logout()
 	{
 		driver.findElement(profileMenu).click();
